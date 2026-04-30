@@ -5,8 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ManasWolrd插件</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="alternate" hreflang="en" href="en/index.html">
+<link rel="alternate" hreflang="zh-CN" href="index.html">
 </head>
 <body>
+
+<!-- ===== 语言切换 ===== -->
+<div class="lang-bar">
+<a class="lang-link active" href="index.html">中文</a>
+<a class="lang-link" href="en/index.html" onclick="setLangEN(event)">English</a>
+</div>
+
+<script>
+function setLangEN(e) {
+    e.preventDefault();
+    var hash = window.location.hash;
+    window.location.href = 'en/index.html' + hash;
+}
+function setLangZH(e) {
+    e.preventDefault();
+    var hash = window.location.hash;
+    window.location.href = '../index.html' + hash;
+}
+</script>
 
 <div class="main-split">
 

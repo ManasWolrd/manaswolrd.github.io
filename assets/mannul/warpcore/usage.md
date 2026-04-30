@@ -1,19 +1,19 @@
 # WarpCore用户手册
 
 # 标题栏
-![title](usage/title.png)
+![title](/assets/mannul/warpcore/title.png)
 
 这是一个可被点击的文字区域，显示了插件的名称，版本号和所使用的SIMD指令集名称。  
 如果插件代码中未使用动态SIMD分配，则指令集名称不会显示。  
 如果您的电脑没有合适的指令集运行，则会显示为**unsupport cpu**
 
-![title_click](usage/title_click.png)
+![title_click](/assets/mannul/warpcore/title_click.png)
 
 点击标题栏会显示菜单，`goto github`将会打开浏览器访问对应的插件页面。  
 `scale`将在以后移除。
 
 # 预设系统
-![preset_click](usage/preset_click.png)
+![preset_click](/assets/mannul/warpcore/preset_click.png)
 
 点击预设名称可查看更多菜单  
 `init patch`重置为初始预设  
@@ -23,7 +23,7 @@
 
 `<`和`>`按钮切换上一个和下一个预设，如果您选择了`factory`则只在factory中循环，`user`同理  
 
-![save_preset](usage/save_preset.png)
+![save_preset](/assets/mannul/warpcore/save_preset.png)
 
 `save`保存当前预设到`user`文件夹，预设显示的名称将会和文件名保持一致，但不能设置为`default`名字  
 `delete`将删除当前加载的`user`预设，预设名称将会设置为`deleted`
@@ -67,7 +67,7 @@
 控制滤波器频率缩放是否跟随**pitch**参数，这会导致梳妆滤波或者重叠的频率段。
 
 # 补充
-![right click on dial](usage/dial_click.png)
+![right click on dial](/assets/mannul/warpcore/dial_click.png)
 
 右键任意旋钮将弹出一个菜单  
 `enter`输入想要的值，但JUCE可能不会设置的那么准确  

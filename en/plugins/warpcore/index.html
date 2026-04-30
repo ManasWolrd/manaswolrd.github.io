@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>WarpCore</title>
-    <link rel="stylesheet" href="../../css/style.css">
+    <title>Warp</title>Core</title>
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/tomorrow-night.min.css">
 </head>
@@ -13,19 +13,19 @@
 <span class="plugin-header-icon">WC</span>
 <div class="plugin-header-content">
 <h2 class="plugin-title">WarpCore</h2>
-<span class="plugin-badge">频谱反转</span>
+<span class="plugin-badge">Spectral Inversion</span>
 </div>
 </div>
 
 <div class="plugin-download" data-github="https://github.com/ManasWolrd/WarpCore"></div>
-<script src="../../js/plugin-download.js"></script>
+<script src="/js/plugin-download.js"></script>
 
 <div class="plugin-description">
-<p><strong>WarpCore</strong> 是一个<strong>多段频谱反转</strong>效果器插件，灵感源自 Prosoniq PiWarp 与 Zynaptiq Wormhole。它能将频谱分割为多个频段并对每个频段独立进行频谱反转，产生从微妙梳状滤波到极端扭曲的各种声音质感。</p>
+<p><strong></strong>WarpCore</strong> is a <strong>multi</strong>-band spectral inversion</strong> effect plugin inspired by Prosoniq PiWarp and Zynaptiq Wormhole. It splits the spectrum into multiple bands and inverts each band independently, producing sounds ranging from subtle comb filtering to extreme distortion.</p>
 </div>
 
 <div class="win-group">
-<div class="win-group-title">功能特点</div>
+<div class="win-group-title">Features</div>
 <div class="section_content">
 <div class="features-with-gui">
 <div class="features-gui-image">
@@ -33,11 +33,11 @@
 </div>
 <div class="features-list-col">
 <ul class="feature-list">
-<li><strong>多段频谱反转</strong> — 将 0 ~ FreqHigh 的频谱分割为可配置数量的段，对每段分别进行频谱反转</li>
-<li><strong>可配置滤波器</strong> — 可调节滤波器极点数量与截止频率缩放</li>
-<li><strong>共振峰移动</strong> — 支持共振峰移动（Formant Shifting），改变音色而不改变音高</li>
-<li><strong>动态 SIMD 调度</strong> — 自动利用现代 CPU 的 SIMD 指令集进行优化</li>
-<li><strong>零延迟处理</strong> — 仅含巴特沃斯滤波器的非线性相位，无额外延迟</li>
+<li><strong>Multi-band spectral inversion</strong> — Split the 0–FreqHigh spectrum into configurable bands and invert each band independently</li>
+<li><strong>Configurable filter</strong> — Adjustable filter pole count and cutoff frequency scaling</li>
+<li><strong>Formant shifting</strong> — Alter timbre without changing pitch</li>
+<li><strong>Dynamic SIMD dispatch</strong> — Automatically utilizes modern CPU SIMD instruction sets</li>
+<li><strong>Zero-latency processing</strong> — Only non-linear phase from Butterworth filters, no added latency</li>
 </ul>
 </div>
 </div>
@@ -45,66 +45,68 @@
 </div>
 
 <div class="win-group">
-<div class="win-group-title">音频演示</div>
+<div class="win-group-title">Audio Demo</div>
 <div class="section_content">
 
 <table class="audio-table">
-<tr><th>说明</th><th>原始</th><th>安装效果后</th></tr>
 <tr>
-<td class="audio-desc-cell">正弦扫频</td>
+    <th>Description</th>
+    <th>Dry</th>
+    <th>Wet</th>
+</tr>
+<tr>
+<td class="audio-desc-cell">Sine Sweep</td>
 <td>
 <div class="audio-item">
 <audio controls class="audio-player">
-<source src="../../assets/audio/chirp.wav" type="audio/wav">
+<source src="/assets/audio/chirp.wav" type="audio/wav">
 </audio>
 </div>
 </td>
 <td>
 <div class="audio-item">
 <audio controls class="audio-player">
-<source src="../../assets/audio/chirp_fx.wav" type="audio/wav">
+<source src="/assets/audio/chirp_fx.wav" type="audio/wav">
 </audio>
 </div>
 </td>
-
 </tr>
 <tr>
 <td class="audio-desc-cell">Klasky Csupo</td>
 <td>
 <div class="audio-item">
 <audio controls class="audio-player">
-<source src="../../assets/audio/Klasky Csupo.wav" type="audio/wav">
+<source src="/assets/audio/Klasky Csupo.wav" type="audio/wav">
 </audio>
 </div>
 </td>
 <td>
 <div class="audio-item">
 <audio controls class="audio-player">
-<source src="../../assets/audio/Klasky Csupo_fx.wav" type="audio/wav">
+<source src="/assets/audio/Klasky Csupo_fx.wav" type="audio/wav">
 </audio>
 </div>
 </td>
 </tr>
-
 </table>
 
 </div>
 </div>
 
 <div class="win-group">
-<div class="win-group-title">视频演示</div>
+<div class="win-group-title">Video Demo</div>
 <div class="section_content">
 
 <div class="video-section-mb">
 <div class="demo-container">
 <a href="https://www.bilibili.com/video/BV1WfwRzEEjK" target="_blank" class="demo-btn">
-<span style="font-size:16px;">&#x25B6;</span> Bilibili — WarpCore 新版本演示
+<span style="font-size:16px;">&#x25B6;</span> Bilibili — WarpCore New Version Demo
 </a>
 <a href="https://www.bilibili.com/video/BV1tpA5zyEo2" target="_blank" class="demo-btn">
-<span style="font-size:16px;">&#x25B6;</span> Bilibili — 整曲破坏演示
+<span style="font-size:16px;">&#x25B6;</span> Bilibili — Full Track Destruction Demo
 </a>
 <a href="https://www.youtube.com/watch?v=7CM1Xm0MM6E" target="_blank" class="demo-btn">
-<span style="font-size:16px;">&#x25B6;</span> YouTube — 旧版演示
+<span style="font-size:16px;">&#x25B6;</span> YouTube — Old Version Demo
 </a>
 </div>
 </div>
@@ -113,10 +115,10 @@
 </div>
 
 <div class="win-group">
-<div class="win-group-title">用户手册</div>
+<div class="win-group-title">User Manual</div>
 <div class="section_content">
 <div id="manual-content" class="manual-content markdown-body">
-<p class="manual-loading">加载中...</p>
+<p class="manual-loading">Loading...</p>
 </div>
 </div>
 </div>
@@ -126,7 +128,7 @@
 <script>
 (function() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', '/assets/mannul/warpcore/usage.md', true);
+    xhr.open('GET', '/assets/mannul/warpcore/usage.en.md', true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             marked.use({

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ManasWorld Plugins</title>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" hreflang="zh-CN" href="/css/index.html">
+<link rel="alternate" hreflang="en" href="index.html">
+</head>
+<body>
+
+<div class="lang-bar">
+<a class="lang-link" href="../index.html" onclick="setLangZH(event)">中文</a>
+<a class="lang-link active" href="index.html" onclick="setLangEN(event)">English</a>
+</div>
+
+<script>
+function setLangZH(e) {
+    e.preventDefault();
+    var hash = window.location.hash;
+    window.location.href = '../index.html' + hash;
+}
+function setLangEN(e) {
+    e.preventDefault();
+    var hash = window.location.hash;
+    window.location.href = 'index.html' + hash;
+}
+</script>
+
+<div class="main-split">
+
+<div class="sidebar-section">
+<div class="section">
+<div class="section-title">Plugin List (<span id="plugin-count">0</span>)</div>
+<div class="section_content sidebar-content">
+<ul class="plugin-list" id="plugin-list">
+</ul>
+</div>
+</div>
+</div>
+
+<div class="content-section">
+<div class="section">
+<div class="section-title" id="content-title">Welcome</div>
+<div class="section_content" id="content-area">
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="footer">
+This page was vibecoded by <a href="https://chat.deepseek.com/" target="_blank">DeepSeek V4 Flash</a> and <a href="https://zed.dev/" target="_blank">Zed</a>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
