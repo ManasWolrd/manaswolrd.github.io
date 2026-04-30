@@ -172,6 +172,6 @@ IIR滤波器的截止频率，控制陷波的宽度
 右键任意lfo的速度旋钮弹出一个菜单  
 `enter`与`reset`同上  
 `tempo sync`：频率以节奏显示，带有T的后缀为3/2倍率，带有D的后缀为2/3倍率。否则以hz显示。  
-`ppq sync`：以 PPQ（Pulses Per Quarter，每四分音符的脉冲数）为单位同步到 DAW 的传输位置，LFO 相位随 PPQ 位置精确重置，适合需要精细到节拍内微时序的同步场景
+`ppq sync`：以 PPQ（Pulses Per Quarter，每四分音符的脉冲数）为单位同步到 DAW 的传输位置，LFO 相位随 PPQ 位置精确重置，适合需要精细到节拍内微时序的同步场景  
 `tempo snap`：频率以节奏显示时，吸附到最近的频率值，否则进行线性插值  
 `reset phase`：重置对应的lfo的相位
