@@ -36,6 +36,7 @@ const PLUGINS = [
         name: 'VitalReverb',
         category: '混响效果',
         icon: 'VR',
+        img: '/assets/img/vitalreverb_ui.png',
         desc: '移植自Vital合成器的混响',
         path: 'plugins/vitalreverb.html'
     }

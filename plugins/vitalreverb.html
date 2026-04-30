@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><title>VitalReverb</title><link rel="stylesheet" href="../../css/style.css"></head>
+<head>
+    <meta charset="UTF-8">
+    <title>VitalReverb</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/tomorrow-night.min.css">
+</head>
 <body>
 
 <div class="plugin-header">
@@ -12,22 +18,59 @@
 </div>
 
 <div class="plugin-download" data-github="https://github.com/ManasWolrd/VitalReverb"></div>
+<script src="/js/plugin-download.js"></script>
 
 <div class="plugin-description">
-<p><strong>VitalReverb</strong> 移植自Vital合成器的混响。</p>
+<p><strong>VitalReverb</strong> 是一款移植自 <strong><a href="https://github.com/mtytel/vital" target="_blank">Vital 合成器</a></strong> 的混响效果器插件，除了原有功能外，还可将音频冻结为无限延音的声景。</p>
 </div>
-
-<script src="/js/plugin-download.js"></script>
 
 <div class="win-group">
 <div class="win-group-title">功能特点</div>
 <div class="section_content">
+<div class="features-with-gui">
+<div class="features-gui-image">
+<img src="/assets/img/vitalreverb_ui.png" alt="VitalReverb GUI" class="plugin-screenshot" onerror="this.style.display='none'">
+</div>
+<div class="features-list-col">
 <ul class="feature-list">
 <li><strong>移植</strong> — 移植自vital的混响</li>
 <li><strong>冻结</strong> — 停止输入信号，使内部音频无限循环</li>
 </ul>
 </div>
 </div>
+</div>
+</div>
+
+<div class="win-group">
+<div class="win-group-title">用户手册</div>
+<div class="section_content">
+<div id="manual-content" class="manual-content markdown-body">
+<p class="manual-loading">加载中...</p>
+</div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>
+(function() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/assets/mannul/vitalreverb/usage.md', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            marked.use({
+                highlight: function(code, lang) {
+                    var language = hljs.getLanguage(lang) ? lang : 'plaintext';
+                    return hljs.highlight(code, { language: language }).value;
+                },
+                langPrefix: 'hljs language-'
+            });
+            document.getElementById('manual-content').innerHTML = marked.parse(xhr.responseText);
+        }
+    };
+    xhr.send();
+})();
+</script>
 
 </body>
 </html>

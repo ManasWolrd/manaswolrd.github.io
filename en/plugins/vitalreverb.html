@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><title>VitalReverb</title><link rel="stylesheet" href="/css/style.css"></head>
+<head>
+    <meta charset="UTF-8">
+    <title>VitalReverb</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/tomorrow-night.min.css">
+</head>
 <body>
 
 <div class="plugin-header">
@@ -15,18 +21,56 @@
 <script src="/js/plugin-download.en.js"></script>
 
 <div class="plugin-description">
-<p><strong>VitalReverb</strong> — Reverb ported from the Vital synth.</p>
+<p><strong>VitalReverb</strong> is a reverb effect plugin ported from the <strong><a href="https://github.com/mtytel/vital" target="_blank">Vital synth</a></strong>. In addition to the original reverb functionality, it can also freeze audio into an infinite sustaining soundscape.</p>
 </div>
 
 <div class="win-group">
 <div class="win-group-title">Features</div>
 <div class="section_content">
+<div class="features-with-gui">
+<div class="features-gui-image">
+<img src="/assets/img/vitalreverb_ui.png" alt="VitalReverb GUI" class="plugin-screenshot" onerror="this.style.display='none'">
+</div>
+<div class="features-list-col">
 <ul class="feature-list">
 <li><strong>Ported</strong> — Reverb algorithm ported from Vital</li>
 <li><strong>Freeze</strong> — Stop input signal and let the internal audio loop infinitely</li>
 </ul>
 </div>
 </div>
+</div>
+</div>
+
+<div class="win-group">
+<div class="win-group-title">User Manual</div>
+<div class="section_content">
+<div id="manual-content" class="manual-content markdown-body">
+<p class="manual-loading">Loading...</p>
+</div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>
+(function() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/assets/mannul/vitalreverb/usage.en.md', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            marked.use({
+                highlight: function(code, lang) {
+                    var language = hljs.getLanguage(lang) ? lang : 'plaintext';
+                    return hljs.highlight(code, { language: language }).value;
+                },
+                langPrefix: 'hljs language-'
+            });
+            document.getElementById('manual-content').innerHTML = marked.parse(xhr.responseText);
+        }
+    };
+    xhr.send();
+})();
+</script>
 
 </body>
 </html>

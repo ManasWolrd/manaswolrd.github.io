@@ -36,6 +36,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (xhr.status === 200) {
                     var data = JSON.parse(xhr.responseText);
                     items.innerHTML = '';
+                    // 显示版本号和发布日期
+                    var date = new Date(data.published_at);
+                    var dateStr = date.getFullYear() + '-' +
+                        String(date.getMonth() + 1).padStart(2, '0') + '-' +
+                        String(date.getDate()).padStart(2, '0');
+                    var info = document.createElement('div');
+                    info.style.cssText = 'width:100%;font-size:14px;color:#666666;font-weight:bold;margin-bottom:4px;';
+                    info.textContent = data.tag_name + ' — ' + dateStr;
+                    items.appendChild(info);
+
+                    // 发布说明内容
+                    if (data.body) {
+                        var notesEl = document.createElement('div');
+                        notesEl.className = 'release-notes';
+                        notesEl.style.cssText = 'width:100%;font-size:13px;color:#333333;background-color:#eeeeee;border:1px solid #808080;padding:8px 10px;margin-top:4px;margin-bottom:6px;white-space:pre-wrap;line-height:1.6;';
+                        notesEl.textContent = data.body;
+                        items.appendChild(notesEl);
+                    }
                     data.assets.forEach(function(asset) {
                         var a = document.createElement('a');
                         a.href = asset.browser_download_url;

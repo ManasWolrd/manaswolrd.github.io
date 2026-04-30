@@ -32,6 +32,7 @@ const PLUGINS = [
         name: 'VitalReverb',
         category: 'Reverb',
         icon: 'VR',
+        img: '/assets/img/vitalreverb_ui.png',
         desc: 'Reverb ported from the Vital synth',
         path: 'plugins/vitalreverb.html'
     }
