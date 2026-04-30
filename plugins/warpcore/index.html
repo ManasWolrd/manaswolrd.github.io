@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><title>WarpCore</title><link rel="stylesheet" href="../../css/style.css"></head>
+<head>
+    <meta charset="UTF-8">
+    <title>WarpCore</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/tomorrow-night.min.css">
+</head>
 <body>
 
 <div class="plugin-header">
@@ -109,19 +115,27 @@
 <div class="win-group">
 <div class="win-group-title">用户手册</div>
 <div class="section_content">
-<div id="manual-content" class="manual-content">
+<div id="manual-content" class="manual-content markdown-body">
 <p class="manual-loading">加载中...</p>
 </div>
 </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script>
 (function() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'usage/usage.md', true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
+            marked.use({
+                highlight(code, lang) {
+                    const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+                    return hljs.highlight(code, { language }).value;
+                },
+                langPrefix: 'hljs language-'
+            });
             document.getElementById('manual-content').innerHTML = marked.parse(xhr.responseText);
         }
     };
