@@ -5,7 +5,7 @@ const PLUGINS = [
         name: 'Overview',
         category: 'General',
         icon: 'i',
-        path: 'plugins/overview/index.html'
+        path: 'plugins/overview.html'
     },
     {
         id: 'warpcore',
@@ -15,7 +15,7 @@ const PLUGINS = [
         github: 'ManasWolrd/WarpCore',
         img: 'https://raw.githubusercontent.com/ManasWolrd/WarpCore/main/docs/gui.png',
         desc: 'Multi-band spectral inversion effect, inspired by PiWarp / Wormhole. Adjustable band count, filters, formant shifting — from subtle comb filtering to extreme warp.',
-        path: 'plugins/warpcore/index.html'
+        path: 'plugins/warpcore.html'
     },
     {
         id: 'steepflanger',
@@ -25,39 +25,15 @@ const PLUGINS = [
         github: 'ManasWolrd/SteepFlanger',
         img: 'https://raw.githubusercontent.com/ManasWolrd/SteepFlanger/main/docs/gui.png',
         desc: 'FIR / IIR hybrid flanger with Barberpole infinite ramp mode. From basic flanging to resonator-like effects.',
-        path: 'plugins/steepflanger/index.html'
+        path: 'plugins/steepflanger.html'
     },
-    // {
-    //     id: 'dispersivedelay',
-    //     name: 'DispersiveDelay',
-    //     category: 'Delay',
-    //     icon: 'DD',
-    //     desc: 'Dispersive delay effect simulating frequency-dependent propagation speeds for unique delay textures.',
-    //     path: 'plugins/dispersivedelay/index.html'
-    // },
-    // {
-    //     id: 'greenvocoder',
-    //     name: 'GreenVocoder',
-    //     category: 'Vocoder',
-    //     icon: 'GV',
-    //     desc: 'Classic vocoder effect that superimposes spectral characteristics of a modulator onto a carrier signal.',
-    //     path: 'plugins/greenvocoder/index.html'
-    // },
-    // {
-    //     id: 'vitalchorus',
-    //     name: 'VitalChorus',
-    //     category: 'Chorus',
-    //     icon: 'VC',
-    //     desc: 'Stereo chorus effect using multiple modulated delay lines to simulate natural thickening of multiple voices.',
-    //     path: 'plugins/vitalchorus/index.html'
-    // },
     {
         id: 'vitalreverb',
         name: 'VitalReverb',
         category: 'Reverb',
         icon: 'VR',
         desc: 'Reverb ported from the Vital synth',
-        path: 'plugins/vitalreverb/index.html'
+        path: 'plugins/vitalreverb.html'
     }
 ];
 

@@ -9,7 +9,7 @@ const PLUGINS = [
         name: '概览',
         category: '综合',
         icon: 'i',
-        path: 'plugins/overview/index.html'
+        path: 'plugins/overview.html'
     },
     {
         id: 'warpcore',
@@ -19,7 +19,7 @@ const PLUGINS = [
         github: 'ManasWolrd/WarpCore',
         img: 'https://raw.githubusercontent.com/ManasWolrd/WarpCore/main/docs/gui.png',
         desc: '多段频谱反转效果器，灵感源自 PiWarp / Wormhole。可调节频段数、滤波器、共振峰移动，从微妙梳状滤波到极端扭曲。',
-        path: 'plugins/warpcore/index.html'
+        path: 'plugins/warpcore.html'
     },
     {
         id: 'steepflanger',
@@ -29,48 +29,16 @@ const PLUGINS = [
         github: 'ManasWolrd/SteepFlanger',
         img: 'https://raw.githubusercontent.com/ManasWolrd/SteepFlanger/main/docs/gui.png',
         desc: 'FIR / IIR 混合架构镶边效果器，支持 Barberpole 无尽斜坡模式。产生从基础镶边到谐振器的效果。',
-        path: 'plugins/steepflanger/index.html'
+        path: 'plugins/steepflanger.html'
     },
-    // {
-    //     id: 'dispersivedelay',
-    //     name: 'DispersiveDelay',
-    //     category: '延迟效果',
-    //     icon: 'DD',
-    //     desc: '色散延迟效果器，模拟不同频率以不同速度传播的物理现象，产生独特的延时纹理。',
-    //     path: 'plugins/dispersivedelay/index.html'
-    // },
-    // {
-    //     id: 'greenvocoder',
-    //     name: 'GreenVocoder',
-    //     category: '声码器',
-    //     icon: 'GV',
-    //     desc: '经典声码器效果器，将调制信号的频谱特征叠加到载波信号上，产生标志性的电子语音效果。',
-    //     path: 'plugins/greenvocoder/index.html'
-    // },
-    // {
-    //     id: 'vitalchorus',
-    //     name: 'VitalChorus',
-    //     category: '合唱效果',
-    //     icon: 'VC',
-    //     desc: '立体声合唱效果器，通过多组延迟线调制模拟多个声部的自然音色增厚效果。',
-    //     path: 'plugins/vitalchorus/index.html'
-    // },
     {
         id: 'vitalreverb',
         name: 'VitalReverb',
         category: '混响效果',
         icon: 'VR',
         desc: '移植自Vital合成器的混响',
-        path: 'plugins/vitalreverb/index.html'
+        path: 'plugins/vitalreverb.html'
     }
-    // 后续插件加在这里，例如：
-    // {
-    //     id: 'eq-pro',
-    //     name: 'EQ-Pro',
-    //     category: '均衡器',
-    //     icon: 'EQ',
-    //     content: '<div class="...">自定义 HTML 内容</div>'
-    // }
 ];
 
 // ===== DOM 引用 =====
