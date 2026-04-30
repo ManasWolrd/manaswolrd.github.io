@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>WarpCore</title><link rel="stylesheet" href="../../css/style.css"></head>
+<body>
+
+<div class="plugin-header">
+<span class="plugin-header-icon">WC</span>
+<div class="plugin-header-content">
+<h2 class="plugin-title">WarpCore</h2>
+<span class="plugin-badge">频谱反转</span>
+</div>
+</div>
+
+<div class="plugin-download" data-github="https://github.com/ManasWolrd/WarpCore"></div>
+<script src="../../js/plugin-download.js"></script>
+
+<div class="plugin-description">
+<p><strong>WarpCore</strong> 是一个<strong>多段频谱反转</strong>效果器插件，灵感源自 Prosoniq PiWarp 与 Zynaptiq Wormhole。它能将频谱分割为多个频段并对每个频段独立进行频谱反转，产生从微妙梳状滤波到极端扭曲的各种声音质感。</p>
+</div>
+
+<div class="win-group">
+<div class="win-group-title">功能特点</div>
+<div class="section_content">
+<div class="features-with-gui">
+<div class="features-gui-image">
+<img src="https://raw.githubusercontent.com/ManasWolrd/WarpCore/main/docs/gui.png" alt="WarpCore GUI" class="plugin-screenshot">
+</div>
+<div class="features-list-col">
+<ul class="feature-list">
+<li><strong>多段频谱反转</strong> — 将 0 ~ FreqHigh 的频谱分割为可配置数量的段，对每段分别进行频谱反转</li>
+<li><strong>可配置滤波器</strong> — 可调节滤波器极点数量与截止频率缩放</li>
+<li><strong>共振峰移动</strong> — 支持共振峰移动（Formant Shifting），改变音色而不改变音高</li>
+<li><strong>动态 SIMD 调度</strong> — 自动利用现代 CPU 的 SIMD 指令集进行优化</li>
+<li><strong>零延迟处理</strong> — 仅含巴特沃斯滤波器的非线性相位，无额外延迟</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="win-group">
+<div class="win-group-title">音频演示</div>
+<div class="section_content">
+
+<table class="audio-table">
+<tr><th>说明</th><th>原始</th><th>安装效果后</th></tr>
+<tr>
+<td class="audio-desc-cell">正弦扫频</td>
+<td>
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="audio/chirp.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+<td>
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="audio/chirp_fx.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+
+</tr>
+<tr>
+<td class="audio-desc-cell">Klasky Csupo</td>
+<td>
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="audio/Klasky Csupo.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+<td>
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="audio/Klasky Csupo_fx.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+</tr>
+
+</table>
+
+</div>
+</div>
+
+<div class="win-group">
+<div class="win-group-title">视频演示</div>
+<div class="section_content">
+
+<div class="video-section-mb">
+<div class="demo-container">
+<a href="https://www.bilibili.com/video/BV1WfwRzEEjK" target="_blank" class="demo-btn">
+<span style="font-size:16px;">&#x25B6;</span> Bilibili — WarpCore 新版本演示
+</a>
+<a href="https://www.bilibili.com/video/BV1tpA5zyEo2" target="_blank" class="demo-btn">
+<span style="font-size:16px;">&#x25B6;</span> Bilibili — 整曲破坏演示
+</a>
+<a href="https://www.youtube.com/watch?v=7CM1Xm0MM6E" target="_blank" class="demo-btn">
+<span style="font-size:16px;">&#x25B6;</span> YouTube — 旧版演示
+</a>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="win-group">
+<div class="win-group-title">用户手册</div>
+<div class="section_content">
+<div id="manual-content" class="manual-content">
+<p class="manual-loading">加载中...</p>
+</div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+(function() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'usage/usage.md', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            document.getElementById('manual-content').innerHTML = marked.parse(xhr.responseText);
+        }
+    };
+    xhr.send();
+})();
+</script>
+
+</body>
+</html>

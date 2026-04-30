@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>概览</title><link rel="stylesheet" href="../../css/style.css"></head>
+<body>
+
+<div class="win-group">
+<div class="win-group-title">插件列表</div>
+<div class="section_content">
+<div class="plugin-card-grid" id="card-grid">
+</div>
+</div>
+</div>
+
+<script>
+(function() {
+    var plugins;
+    try {
+        plugins = window.parent.getPlugins();
+    } catch(e) {}
+    if (!plugins || !plugins.length) {
+        document.getElementById('card-grid').innerHTML = '<p style="color:#666;">无法加载插件列表</p>';
+        return;
+    }
+    var grid = document.getElementById('card-grid');
+    grid.innerHTML = '';
+    plugins.forEach(function(p) {
+        var a = document.createElement('a');
+        a.href = '../../index.html#' + p.id;
+        a.target = '_top';
+        a.className = 'plugin-card';
+
+        var imgDiv = document.createElement('div');
+        imgDiv.className = 'plugin-card-img';
+        if (p.img) {
+            var img = document.createElement('img');
+            img.src = p.img;
+            img.alt = p.name + ' GUI';
+            imgDiv.appendChild(img);
+        } else {
+            var ph = document.createElement('div');
+            ph.className = 'plugin-card-img-ph';
+            ph.textContent = p.icon || '?';
+            imgDiv.appendChild(ph);
+        }
+        a.appendChild(imgDiv);
+
+        var body = document.createElement('div');
+        body.className = 'plugin-card-body';
+        body.innerHTML =
+            '<div class="plugin-card-name">' + p.name + '</div>' +
+            '<div class="plugin-card-cat">' + p.category + '</div>' +
+            '<div class="plugin-card-desc">' + (p.desc || '') + '</div>';
+        a.appendChild(body);
+
+        grid.appendChild(a);
+    });
+})();
+</script>
+
+</body>
+</html>
