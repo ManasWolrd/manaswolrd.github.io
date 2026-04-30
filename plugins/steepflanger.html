@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><title>SteepFlanger</title><link rel="stylesheet" href="../../css/style.css"></head>
+<head>
+    <meta charset="UTF-8">
+    <title>SteepFlanger</title>
+    <link rel="stylesheet" href="/css/style.css"></head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/tomorrow-night.min.css">
 <body>
 
 <div class="plugin-header">
@@ -37,6 +42,96 @@
 </div>
 
 <div class="win-group">
+<div class="win-group-title">音频演示</div>
+<div class="section_content">
+
+<table class="audio-table">
+<tr><th>说明</th><th>原始</th><th>安装效果后</th></tr>
+<tr>
+<td class="audio-desc-cell">锯齿波 Flanger</td>
+<td rowspan="5">
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="/assets/audio/steepflanger/saw.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+<td>
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="/assets/audio/steepflanger/flanger.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+
+</tr>
+<tr>
+<td class="audio-desc-cell">锯齿波 IIR Flanger</td>
+<td>
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="/assets/audio/steepflanger/iir_flanger.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+</tr>
+
+<tr>
+<td class="audio-desc-cell">锯齿波 barberpole Flanger</td>
+<td>
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="/assets/audio/steepflanger/barberpole_flanger.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+</tr>
+
+<tr>
+<td class="audio-desc-cell">锯齿波 iir barberpole Flanger</td>
+<td>
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="/assets/audio/steepflanger/iir_barberpole.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>锯齿波 YOI bass</td>
+<td>
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="/assets/audio/steepflanger/yoi.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>harmor谐振器语音</td>
+<td>
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="/assets/audio/steepflanger/speech.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+<td>
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="/assets/audio/steepflanger/speech_fx.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+</tr>
+
+</table>
+</div>
+</div>
+
+<div class="win-group">
 <div class="win-group-title">视频演示</div>
 <div class="section_content">
 
@@ -51,6 +146,37 @@
 
 </div>
 </div>
+
+<div class="win-group">
+<div class="win-group-title">用户手册</div>
+<div class="section_content">
+<div id="manual-content" class="manual-content markdown-body">
+<p class="manual-loading">加载中...</p>
+</div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>
+(function() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/assets/mannul/steepflanger/usage.md', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            marked.use({
+                highlight(code, lang) {
+                    const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+                    return hljs.highlight(code, { language }).value;
+                },
+                langPrefix: 'hljs language-'
+            });
+            document.getElementById('manual-content').innerHTML = marked.parse(xhr.responseText);
+        }
+    };
+    xhr.send();
+})();
+</script>
 
 </body>
 </html>

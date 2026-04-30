@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><title>SteepFlanger</title><link rel="stylesheet" href="/css/style.css"></head>
+<head>
+    <meta charset="UTF-8">
+    <title>SteepFlanger</title>
+    <link rel="stylesheet" href="/css/style.css"></head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/tomorrow-night.min.css">
 <body>
 
 <div class="plugin-header">
@@ -37,6 +42,96 @@
 </div>
 
 <div class="win-group">
+<div class="win-group-title">Audio Demo</div>
+<div class="section_content">
+
+<table class="audio-table">
+<tr><th>Description</th><th>Dry</th><th>Wet</th></tr>
+<tr>
+<td class="audio-desc-cell">sawtooth Flanger</td>
+<td rowspan="5">
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="/assets/audio/steepflanger/saw.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+<td>
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="/assets/audio/steepflanger/flanger.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+
+</tr>
+<tr>
+<td class="audio-desc-cell">sawtooth IIR Flanger</td>
+<td>
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="/assets/audio/steepflanger/iir_flanger.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+</tr>
+
+<tr>
+<td class="audio-desc-cell">sawtooth barberpole Flanger</td>
+<td>
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="/assets/audio/steepflanger/barberpole_flanger.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+</tr>
+
+<tr>
+<td class="audio-desc-cell">sawtooth iir barberpole Flanger</td>
+<td>
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="/assets/audio/steepflanger/iir_barberpole.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>sawtooth YOI bass</td>
+<td>
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="/assets/audio/steepflanger/yoi.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>harmor resonate speech</td>
+<td>
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="/assets/audio/steepflanger/speech.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+<td>
+<div class="audio-item">
+<audio controls class="audio-player">
+<source src="/assets/audio/steepflanger/speech_fx.wav" type="audio/wav">
+</audio>
+</div>
+</td>
+</tr>
+
+</table>
+</div>
+</div>
+
+<div class="win-group">
 <div class="win-group-title">Video Demo</div>
 <div class="section_content">
 
@@ -51,6 +146,36 @@
 
 </div>
 </div>
+<div class="win-group">
+<div class="win-group-title">User Manual</div>
+<div class="section_content">
+<div id="manual-content" class="manual-content markdown-body">
+<p class="manual-loading">Loading...</p>
+</div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>
+(function() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/assets/mannul/steepflanger/usage.en.md', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            marked.use({
+                highlight(code, lang) {
+                    const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+                    return hljs.highlight(code, { language }).value;
+                },
+                langPrefix: 'hljs language-'
+            });
+            document.getElementById('manual-content').innerHTML = marked.parse(xhr.responseText);
+        }
+    };
+    xhr.send();
+})();
+</script>
 
 </body>
 </html>
